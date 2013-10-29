@@ -48,11 +48,6 @@ class Fraccion
     self
   end
   
-  # Sobrecarga del operador "=="
-  def ==(other)
-    (@n == other.n) && (@d == other.d)
-  end
-  
   # Calculo del reciproco
   def reciprocal()
     
@@ -116,9 +111,9 @@ class Fraccion
   
   # Operador <=>
   def <=>(other)
-    raise TypeError "Objeto no valido"
-    unless (other.is_a?Fraccion)
-      self.to_float<=>other.to_float
-   end
+    
+    raise TypeError, 'Objeto no valido' unless other.is_a? Fraccion
+        self.to_float <=> other.to_float
+  end
   
 end
