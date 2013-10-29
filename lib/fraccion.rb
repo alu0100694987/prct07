@@ -1,10 +1,10 @@
-
 require "lib/mcd.rb"
 
 class Fraccion 
   
+  include Comparable
   attr_accessor :n,:d
-
+  
   def initialize(x,y=1)
     m=mcd(x,y)
     
@@ -114,24 +114,11 @@ class Fraccion
     resto  
   end
   
-  # Sobrecarga operador "<"
-  def <(other)    
-    self.to_float < other.to_float    
-  end
-  
-  # Sobrecarga operador ">"
-  def >(other)    
-    self.to_float > other.to_float    
-  end
-  
-  # Sobrecarga operador "<="
-  def <=(other)     
-    self.to_float <= other.to_float   
-  end
-  
-  # Sobrecarga operador ">="
-  def >=(other) 
-    self.to_float >= other.to_float   
-  end
+  # Operador <=>
+  def <=>(other)
+    raise TypeError "Objeto no valido"
+    unless (other.is_a?Fraccion)
+      self.to_float<=>other.to_float
+   end
   
 end
