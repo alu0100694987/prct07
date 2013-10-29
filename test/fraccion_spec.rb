@@ -23,21 +23,21 @@ describe Fraccion do
     end  
   end
   
-  describe "# Métodos num() y denom(): " do
-    it "Obtención de numerador" do
+  describe "# Metodos num() y denom(): " do
+    it "Obtencion de numerador" do
       @frac1.num().should == 3
     end
-    it "Obtención de denominador" do
+    it "Obtencion de denominador" do
       @frac2.denom().should == 5
     end
   end
   
   describe "# Salida en consola: " do
-    it "Mostrar fracción en pantalla" do
+    it "Mostrar fraccion en pantalla" do
       @frac1.to_s().should == "3/4"
       @frac2.to_s().should == "2/5"
     end
-    it "Mostrar fracción en formato flotante" do
+    it "Mostrar fraccion en formato flotante" do
       @frac1.to_float().to_s().should eq("0.75")
       @frac2.to_float().to_s().should eq("0.4")
     end
@@ -51,15 +51,15 @@ describe Fraccion do
   end
   
   describe "# Operaciones unarias:" do
-    it "Cálculo del valor absoluto" do
+    it "Calculo del valor absoluto" do
       @frac1.abs.should == @frac1
       @frac3.abs.to_s().should eq("2/5")
     end
-    it "Cálculo del recíproco" do
+    it "Calculo del reciproco" do
       @frac1.reciprocal.to_s().should eq("4/3")
       @frac3.reciprocal.to_s().should eq("-5/2")
     end
-    it "Cálculo del opuesto" do
+    it "Calculo del opuesto" do
       ((-@frac1) == @frac1).should be_false
       (-@frac3).to_s.should eq("2/5")
     end
@@ -82,7 +82,7 @@ describe Fraccion do
       ((@frac2 * @frac3) == Fraccion.new(-4,25)).should be_true
     end
 
-    it "División de fracciones" do
+    it "Division de fracciones" do
       ((@frac1 / @frac2) == Fraccion.new(15,8)).should be_true
       ((@frac3 / @frac3) == Fraccion.new(1,1)).should be_true
     end     
@@ -96,11 +96,11 @@ describe Fraccion do
 
 
   describe "# Comparaciones entre fracciones:" do
-     it "Comparación mayor, y mayor e igual" do
+     it "Comparacion mayor, y mayor e igual" do
        (@frac1 >= @frac2).should be_true
        (@frac1 > @frac1).should be_false
      end
-     it "Comparación menor, y menor e igual" do
+     it "Comparacion menor, y menor e igual" do
        (@frac2 <= @frac2).should be_true
        (@frac2 < @frac3).should be_false
      end
