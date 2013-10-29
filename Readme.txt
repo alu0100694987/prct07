@@ -4,3 +4,4 @@
 
 # Rama "cristo-travis"
   - Se crea el fichero ".travis.yml" y se añaden las plataformas sobre las que se quieren probar el correcto funcionamiento.
+  - Se combina la rama cristo-travis con la master
